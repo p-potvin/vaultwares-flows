@@ -121,7 +121,7 @@ class NodeLibraryPanel(QWidget):
             self._tree.addTopLevelItem(cat_item)
 
             for defn in matches:
-                c1_hex, _ = HEADER_COLORS.get(defn.header_category, ("#4B5563", "#374151"))
+                category_color, _ = HEADER_COLORS.get(defn.header_category, ("#4B5563", "#374151"))
                 node_item = QTreeWidgetItem([f"  {defn.icon}  {defn.title}"])
                 node_item.setFont(0, node_font)
                 node_item.setForeground(0, QColor("#C4CBE0"))

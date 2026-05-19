@@ -104,13 +104,13 @@ class PropertiesPanel(QWidget):
 
         defn = node.definition
         cat = defn.header_category
-        c1, c2 = HEADER_COLORS.get(cat, ("#1F2937", "#374151"))
+        gradient_start, gradient_end = HEADER_COLORS.get(cat, ("#1F2937", "#374151"))
 
         # Node identity card
         card = QFrame()
         card.setStyleSheet(
             f"QFrame {{ background:qlineargradient(x1:0,y1:0,x2:1,y2:0,"
-            f"stop:0 {c1}, stop:1 {c2});"
+            f"stop:0 {gradient_start}, stop:1 {gradient_end});"
             f"border-radius:8px; border:1px solid #252845; }}"
         )
         card_layout = QVBoxLayout(card)

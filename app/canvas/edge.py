@@ -66,8 +66,8 @@ class FlowEdge(QGraphicsPathItem):
         self.setZValue(0)
 
         # Derive color from source port type
-        c_hex = PORT_TYPE_COLORS.get(source.port_def.port_type, "#7C3AED")
-        self._color = QColor(c_hex)
+        color_hex = PORT_TYPE_COLORS.get(source.port_def.port_type, "#7C3AED")
+        self._color = QColor(color_hex)
         self._glow = QColor(self._color.red(), self._color.green(),
                             self._color.blue(), 55)
 

@@ -270,10 +270,10 @@ class FlowNode(QGraphicsObject):
 
         # ── header gradient ────────────────────────────────────────────
         cat = self._def.header_category
-        c1_hex, c2_hex = HEADER_COLORS.get(cat, ("#1F2937", "#374151"))
+        gradient_start, gradient_end = HEADER_COLORS.get(cat, ("#1F2937", "#374151"))
         grad = QLinearGradient(0.0, 0.0, self._width, 0.0)
-        grad.setColorAt(0.0, QColor(c1_hex))
-        grad.setColorAt(1.0, QColor(c2_hex))
+        grad.setColorAt(0.0, QColor(gradient_start))
+        grad.setColorAt(1.0, QColor(gradient_end))
 
         header_rect = QRectF(0.0, 0.0, self._width, _HEADER_HEIGHT)
         clip = QPainterPath()
@@ -313,8 +313,8 @@ class FlowNode(QGraphicsObject):
             cy = y_start + i * _PORT_ROW_HEIGHT
             label_rect = QRectF(14.0, cy - _PORT_ROW_HEIGHT / 2,
                                 self._width / 2 - 20, _PORT_ROW_HEIGHT)
-            c_hex = PORT_TYPE_COLORS.get(pd.port_type, "#94A3B8")
-            painter.setPen(QPen(QColor(c_hex).lighter(130)))
+            port_color = PORT_TYPE_COLORS.get(pd.port_type, "#94A3B8")
+            painter.setPen(QPen(QColor(port_color).lighter(130)))
             painter.drawText(label_rect,
                              Qt.AlignmentFlag.AlignVCenter | Qt.AlignmentFlag.AlignLeft,
                              pd.name)
@@ -323,8 +323,8 @@ class FlowNode(QGraphicsObject):
             cy = y_start + i * _PORT_ROW_HEIGHT
             label_rect = QRectF(self._width / 2 + 6.0, cy - _PORT_ROW_HEIGHT / 2,
                                 self._width / 2 - 20, _PORT_ROW_HEIGHT)
-            c_hex = PORT_TYPE_COLORS.get(pd.port_type, "#94A3B8")
-            painter.setPen(QPen(QColor(c_hex).lighter(130)))
+            port_color = PORT_TYPE_COLORS.get(pd.port_type, "#94A3B8")
+            painter.setPen(QPen(QColor(port_color).lighter(130)))
             painter.drawText(label_rect,
                              Qt.AlignmentFlag.AlignVCenter | Qt.AlignmentFlag.AlignRight,
                              pd.name)

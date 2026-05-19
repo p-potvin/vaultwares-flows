@@ -1,4 +1,4 @@
-"""Vaultwares Flows – colour palette and QSS stylesheet."""
+"""Vaultwares Flows – color palette and QSS stylesheet."""
 
 from __future__ import annotations
 
