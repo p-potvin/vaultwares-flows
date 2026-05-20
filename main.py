@@ -9,7 +9,6 @@ import sys
 def main() -> None:
     try:
         from PySide6.QtWidgets import QApplication
-        from PySide6.QtCore import Qt
         from PySide6.QtGui import QFont, QFontDatabase
     except ImportError:
         print(
@@ -18,9 +17,6 @@ def main() -> None:
             file=sys.stderr,
         )
         sys.exit(1)
-
-    # High-DPI support
-    QApplication.setAttribute(Qt.ApplicationAttribute.AA_UseHighDpiPixmaps, True)
 
     app = QApplication(sys.argv)
     app.setApplicationName("Vaultwares Flows")

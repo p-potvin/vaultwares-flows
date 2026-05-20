@@ -77,7 +77,7 @@ pip install -r requirements-ai.txt
 
 ## Project Structure
 
-```
+```text
 vaultwares-flows/
 ├── main.py                    # Entry point
 ├── requirements.txt           # Core deps (PySide6)
